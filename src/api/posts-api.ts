@@ -15,7 +15,7 @@ class PostsApi {
   };
 
   deletePost = async (id: number) => {
-    const responce = fetch(`${baseApi}/posts/${id}`, {
+    const responce = await fetch(`${baseApi}/posts/${id}`, {
       method: "DELETE",
     });
     return responce;
