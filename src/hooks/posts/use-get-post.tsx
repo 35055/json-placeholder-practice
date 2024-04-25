@@ -8,9 +8,10 @@ export const useGetPost = (id: string) => {
 
   useEffect(() => {
     const handleFetch = async (id: string) => {
+      setIsLoading(true);
       const data = await postsApi.getPost(id);
       setPost(data);
-      setIsLoading(true);
+      setIsLoading(false);
     };
 
     if (id) handleFetch(id);

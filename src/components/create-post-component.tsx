@@ -20,7 +20,7 @@ export const CreatePostComponent = () => {
     }
   }, [post]);
 
-  if (!post) return <h1>Loading...</h1>;
+  if (!post && id) return <h1>Loading...</h1>;
 
   return (
     <div
