@@ -1,4 +1,4 @@
-import postsApi from "../api/posts-api";
+import postsApi from "../../api/posts-api";
 
 export const useDeletePost = () => {
   const handleDelete = (id: number) => {

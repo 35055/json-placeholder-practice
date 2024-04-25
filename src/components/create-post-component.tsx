@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { useCreatePost } from "../hooks/use-create-post";
-import { useParams } from "react-router-dom";
-import { useGetPost } from "../hooks/use-get-post";
-import { useEditPosts } from "../hooks/use-edit-post";
+import { useCreatePost } from "../hooks/posts/use-create-post";
+import { useNavigate, useParams } from "react-router-dom";
+import { useGetPost } from "../hooks/posts/use-get-post";
+import { useEditPosts } from "../hooks/posts/use-edit-post";
 
 export const CreatePostComponent = () => {
   const { id = "" } = useParams<{ id: string }>();
+  const navigate = useNavigate();
   const { post } = useGetPost(id);
   const { handleCreatePost } = useCreatePost();
   const { handleEditPost } = useEditPosts();
@@ -54,6 +55,7 @@ export const CreatePostComponent = () => {
           id ? handleEditPost(title, name, id) : handleCreatePost(title, name);
           setTitle("");
           setName("");
+          navigate("/");
         }}
       >
         SEND

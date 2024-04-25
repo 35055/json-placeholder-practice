@@ -1,5 +1,5 @@
 import { baseApi } from "../base/base-api";
-import { TPost } from "../hooks/use-get-posts";
+import { TPost } from "../hooks/posts/use-get-posts";
 
 class PostsApi {
   getPost = async (id: string): Promise<TPost> => {

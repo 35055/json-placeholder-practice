@@ -1,13 +1,13 @@
 import { Link, useParams } from "react-router-dom";
-import { useGetPost } from "../hooks/use-get-post";
-import { useDeletePost } from "../hooks/use-delete-post";
+import { useGetPost } from "../hooks/posts/use-get-post";
+import { useDeletePost } from "../hooks/posts/use-delete-post";
 
 export const Post = () => {
   const { id = "" } = useParams<{ id: string }>();
-  const { post } = useGetPost(id);
+  const { post, isLoading } = useGetPost(id);
   const { handleDelete } = useDeletePost();
 
-  if (!post) return <h1>Loading...</h1>;
+  if (isLoading || !post) return <h1>Loading...</h1>;
 
   return (
     <div>

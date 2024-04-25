@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import postsApi from "../api/posts-api";
+import postsApi from "../../api/posts-api";
 
 export type TPost = {
   userId: number;

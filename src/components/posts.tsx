@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useGetPosts } from "../hooks/use-get-posts";
+import { useGetPosts } from "../hooks/posts/use-get-posts";
 
 export const Posts = () => {
   const { posts, isLoading } = useGetPosts();

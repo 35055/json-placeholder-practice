@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { TPost } from "./use-get-posts";
-import postsApi from "../api/posts-api";
+import postsApi from "../../api/posts-api";
 
 export const useGetPost = (id: string) => {
   const [post, setPost] = useState<TPost>();
